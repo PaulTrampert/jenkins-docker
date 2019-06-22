@@ -1,5 +1,8 @@
 FROM jenkins/jenkins:lts
 
+ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
+ENV CASC_JENKINS_CONFIG="/usr/share/jenkins/casc_configs/"
+
 USER root
 
 RUN apt-get update && \
@@ -10,9 +13,10 @@ RUN apt-get update && \
   apt-get install docker-ce-cli -y && \
   pip3 install docker-compose
 
-USER jenkins
+RUN mkdir ${CASC_JENKINS_CONFIG} && \
+  chown -R jenkins:jenkins ${CASC_JENKINS_CONFIG}
 
-ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
+USER jenkins
 
 COPY security.groovy /usr/share/jenkins/ref/init.groovy.d/security.groovy
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
