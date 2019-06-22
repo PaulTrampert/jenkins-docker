@@ -1,3 +1,7 @@
+def getBranchTag(env) {
+  return (env.BRANCH_NAME == "master") ? "latest" : env.BRANCH_NAME
+}
+
 pipeline {
   agent any
 
@@ -5,7 +9,7 @@ pipeline {
     DOCKER_REPO = "docker.ptrampert.com"
     DOCKER_REPO_CREDENTIALS = "nexus"
     IMAGE_NAME = "jenkins"
-    BRANCH_TAG = (BRANCH_NAME == "master") ? "latest" : BRANCH_NAME
+    BRANCH_TAG = getBranchTag(env)
   }
 
   options {
