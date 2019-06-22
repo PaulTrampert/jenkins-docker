@@ -30,7 +30,7 @@ pipeline {
       steps {
         withDockerRegistry(credentialsId: 'nexus', url: "https://$DOCKER_REPO") {
           script {
-            image("$DOCKER_REPO/$IMAGE_NAME:$BRANCH_TAG").push()
+            docker.image("$DOCKER_REPO/$IMAGE_NAME:$BRANCH_TAG").push()
           }
         }
       }
