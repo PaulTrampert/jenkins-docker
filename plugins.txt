@@ -13,6 +13,7 @@ cobertura
 code-coverage-api
 command-launcher
 config-file-provider
+configuration-as-code
 credentials
 credentials-binding
 dashboard-view
