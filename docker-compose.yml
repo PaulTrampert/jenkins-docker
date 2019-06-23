@@ -3,6 +3,7 @@ services:
   jenkins:
     build: ./
     volumes:
+      - jenkins_home:/var/jenkins_home/
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - 8080:8080
@@ -16,3 +17,6 @@ secrets:
     file: ./test-user
   jenkins-pass:
     file: ./test-pass
+
+volumes:
+  jenkins_home:
