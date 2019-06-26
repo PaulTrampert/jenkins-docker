@@ -21,7 +21,7 @@ pipeline {
     stage("Build Image") {
       steps {
         script {
-          docker.build("$DOCKER_REPO/$IMAGE_NAME:$BRANCH_TAG", "--no-cache")
+          docker.build("$DOCKER_REPO/$IMAGE_NAME:$BRANCH_TAG", "--no-cache .")
         }
       }
     }
