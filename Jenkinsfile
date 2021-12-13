@@ -7,7 +7,7 @@ pipeline {
 
   environment {
     DOCKER_REPO = "docker.ptrampert.com"
-    DOCKER_REPO_CREDENTIALS = "ad_user_password"
+    DOCKER_REPO_CREDENTIALS = "nexus"
     IMAGE_NAME = "jenkins"
     BRANCH_TAG = getBranchTag(env)
   }
