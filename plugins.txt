@@ -55,6 +55,7 @@ pipeline-build-step
 pipeline-github-lib
 pipeline-githubnotify-step
 pipeline-graph-analysis
+pipeline-groovy-lib
 pipeline-input-step
 pipeline-milestone-step
 pipeline-model-api
@@ -79,7 +80,6 @@ workflow-aggregator
 workflow-api
 workflow-basic-steps
 workflow-cps
-workflow-cps-global-lib
 workflow-durable-task-step
 workflow-job
 workflow-multibranch
